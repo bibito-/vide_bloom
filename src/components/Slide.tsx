@@ -94,7 +94,7 @@ export const Slide: React.FC<SlideProps> = ({ data, isActive }) => {
                             if (slug) {
                                 return (
                                     <iframe
-                                        src={`https://clips.twitch.tv/embed?clip=${slug}&parent=localhost&parent=127.0.0.1`}
+                                        src={`https://clips.twitch.tv/embed?clip=${slug}&parent=https://bibito-.github.io/vide_bloom`}
                                         height="100%"
                                         width="100%"
                                         allowFullScreen={true}
