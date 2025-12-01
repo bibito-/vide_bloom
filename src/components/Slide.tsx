@@ -16,6 +16,14 @@ export const Slide: React.FC<SlideProps> = ({ data, isActive }) => {
         exit: { opacity: 0, x: -100, transition: { duration: 0.3 } }
     };
 
+    const getParentDomain = () => {
+        if (typeof window !== 'undefined') {
+            return window.location.hostname; // "bibito-.github.io"
+        }
+        return 'localhost';
+    };
+
+
     if (!isActive) return null;
 
     return (
@@ -94,7 +102,7 @@ export const Slide: React.FC<SlideProps> = ({ data, isActive }) => {
                             if (slug) {
                                 return (
                                     <iframe
-                                        src={`https://clips.twitch.tv/embed?clip=${slug}&parent=localhost&parent=bibito-.github.io`}
+                                        src={`https://clips.twitch.tv/embed?clip=${slug}&parent=${getParentDomain()}`}
                                         height="100%"
                                         width="100%"
                                         allowFullScreen={true}
