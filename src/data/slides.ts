@@ -134,7 +134,7 @@ export const slides: SlideData[] = [
     {
         id: 11,
         type: 'title',
-        title: 'Implementation 実施',
+        title: 'Implementation 実行するのみ',
         highlight: 'とにかくジャングルを１周回りましょう',
         content: [
             '座学とトレモする気のないおじにはコレしかないです。',
