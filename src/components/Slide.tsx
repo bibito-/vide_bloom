@@ -16,9 +16,11 @@ export const Slide: React.FC<SlideProps> = ({ data, isActive }) => {
         exit: { opacity: 0, x: -100, transition: { duration: 0.3 } }
     };
 
+    // twitch側のAPI Policyでハイフンは使えないので、独自ドメインを取得ました。
+    // その為、ドメインの直書きをやめました。
     const getParentDomain = () => {
         if (typeof window !== 'undefined') {
-            return window.location.hostname; // "bibito-.github.io"
+            return window.location.hostname;
         }
         return 'localhost';
     };
