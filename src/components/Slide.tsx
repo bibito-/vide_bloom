@@ -132,7 +132,7 @@ export const Slide: React.FC<SlideProps> = ({ data, isActive }) => {
                             }
                         })()}
                     </div>
-                    <div className="space-y-2 text-left w-full max-w-4xl hidden md:block">
+                    <div className="space-y-2 text-left w-full max-w-4xl block">
                         {data.content?.map((text, i) => (
                             <p key={i} className="text-lg md:text-xl text-gray-400 border-l-4 border-lol-gold pl-4">{text}</p>
                         ))}
