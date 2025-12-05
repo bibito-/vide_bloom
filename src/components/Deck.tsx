@@ -7,29 +7,39 @@ export const Deck: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [touchStart, setTouchStart] = useState<number | null>(null);
     const [touchEnd, setTouchEnd] = useState<number | null>(null);
+    const [touchStartY, setTouchStartY] = useState<number | null>(null);
+    const [touchEndY, setTouchEndY] = useState<number | null>(null);
 
-    const minSwipeDistance = 50;
+    const minSwipeDistance = 100;
 
     const onTouchStart = (e: React.TouchEvent) => {
         setTouchEnd(null);
         setTouchStart(e.targetTouches[0].clientX);
+        setTouchEndY(null);
+        setTouchStartY(e.targetTouches[0].clientY);
     };
 
     const onTouchMove = (e: React.TouchEvent) => {
         setTouchEnd(e.targetTouches[0].clientX);
+        setTouchEndY(e.targetTouches[0].clientY);
     };
 
     const onTouchEnd = () => {
         if (!touchStart || !touchEnd) return;
 
-        const distance = touchStart - touchEnd;
-        const isLeftSwipe = distance > minSwipeDistance;
-        const isRightSwipe = distance < -minSwipeDistance;
+        const xDistance = touchStart - touchEnd;
+        const yDistance = (touchStartY && touchEndY) ? touchStartY - touchEndY : 0;
 
-        if (isLeftSwipe) {
-            nextSlide();
-        } else if (isRightSwipe) {
-            prevSlide();
+        const isLeftSwipe = xDistance > minSwipeDistance;
+        const isRightSwipe = xDistance < -minSwipeDistance;
+
+        // Only swipe if horizontal distance is greater than vertical distance (to avoid scrolling triggering swipe)
+        if (Math.abs(xDistance) > Math.abs(yDistance)) {
+            if (isLeftSwipe) {
+                nextSlide();
+            } else if (isRightSwipe) {
+                prevSlide();
+            }
         }
     };
 
