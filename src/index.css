@@ -7,3 +7,28 @@
     @apply bg-lol-dark text-white overflow-hidden;
   }
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #c8aa6e, #0ac8b9);
+  /* lol-gold to lol-blue */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #d9bb7f, #1bd9ca);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c8aa6e transparent;
+}
