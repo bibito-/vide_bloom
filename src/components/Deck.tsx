@@ -10,7 +10,8 @@ export const Deck: React.FC = () => {
     const [touchStartY, setTouchStartY] = useState<number | null>(null);
     const [touchEndY, setTouchEndY] = useState<number | null>(null);
 
-    const minSwipeDistance = 100;
+    // モバイル環境でスクロールを終えるアクションでスライドがされて不快なので、閾値少し大きく設定。
+    const minSwipeDistance = 70;
 
     const onTouchStart = (e: React.TouchEvent) => {
         setTouchEnd(null);
