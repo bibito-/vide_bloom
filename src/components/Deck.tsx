@@ -84,7 +84,7 @@ export const Deck: React.FC = () => {
 
             {/* Main Content */}
             <div className="z-10 w-full h-full relative">
-                <Slide data={slides[currentSlide]} isActive={true} />
+                <Slide key={currentSlide} data={slides[currentSlide]} isActive={true} />
             </div>
 
             {/* Navigation Controls */}
