@@ -60,7 +60,7 @@ export const Deck: React.FC = () => {
 
     return (
         <div
-            className="w-screen h-screen bg-lol-dark text-white overflow-hidden relative flex items-center justify-center"
+            className="w-screen h-[100dvh] bg-lol-dark text-white overflow-hidden relative flex"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
