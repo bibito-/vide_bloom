@@ -34,7 +34,7 @@ export const Slide: React.FC<SlideProps> = ({ data, isActive }) => {
             animate="visible"
             exit="exit"
             variants={variants}
-            className="w-full h-full flex flex-col justify-start md:justify-center items-center p-6 pt-16 md:p-12 text-center max-w-6xl mx-auto overflow-y-auto"
+            className="w-full h-full flex flex-col justify-start md:justify-center items-center px-6 pt-16 pb-24 md:p-12 text-center max-w-6xl mx-auto overflow-y-auto"
         >
             {data.type === 'title' && (
                 <div className="space-y-6 md:space-y-8">
