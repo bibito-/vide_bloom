@@ -77,7 +77,7 @@ export const Slide: React.FC<SlideProps> = ({ data, isActive }) => {
             )}
 
             {data.type === 'video' && (
-                <div className="w-full h-full flex flex-col items-center justify-center space-y-4 md:space-y-8">
+                <div className="w-full flex flex-col items-center justify-center space-y-4 md:space-y-8 py-8">
                     <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white mb-1 md:mb-2">
                         {data.title}
                     </h2>
